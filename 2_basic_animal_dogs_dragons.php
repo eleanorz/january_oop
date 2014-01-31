@@ -2,9 +2,9 @@
 	
 	class Animal
 	{
-		function __construct()
+		function __construct($name)
 		{
-			$this->name = "generic name";
+			$this->name = $name;
 			$this->health = 100;
 
 			return $this->name;
@@ -29,8 +29,10 @@
 
 	class Dog extends Animal
 	{
-		function __construct()
+		function __construct($instance)
 		{
+			//scope resolution operator to keep parent construct going
+			parent::__construct($instance);
 			$this->health = 150;
 			echo $this->name." the Puppy born, ";
 		}
@@ -44,8 +46,9 @@
 
 	class Dragon extends Animal
 	{
-		function __construct()
+		function __construct($instance)
 		{
+			parent::__construct($instance);
 			$this->health = 170;
 			echo $this->name;
 			echo " the Dragon hatched, ";
@@ -61,5 +64,9 @@
 	$drag = new Dragon('Puff');
 
 	$rover = new Dog('Rover');
+
+	$drag->fly();
+
+	$rover->pet();
 
  ?>
