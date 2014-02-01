@@ -23,7 +23,7 @@
 		function displayHealth()
 		{
 			echo $this->name."'s life points = ";
-			return $this->heath;
+			echo $this->health;
 		}
 	}
 
@@ -59,14 +59,39 @@
 			$this->health-=10;
 			echo " Fly, ";
 		}
+
+		function getHealth($instance)
+		{
+			echo "This is a dragonnn!";
+			parent::__construct($instance);
+		}
 	}
 
-	$drag = new Dragon('Puff');
-
+	//DOG
 	$rover = new Dog('Rover');
-
-	$drag->fly();
-
+	//walk 3 times
+	for ($i=0; $i < 3; $i++) 
+	{ 
+		$rover->walk();
+	}
+	//run 3 times
+	for ($i=0; $i < 2; $i++)
+	{ 
+		$rover->run();
+	}
 	$rover->pet();
+	$rover->displayHealth();
 
+	//DRAGON
+	$drag = new Dragon('Puff');
+	for ($i=0; $i < 3; $i++)
+	{ 
+		$drag->walk();
+	}
+	for ($i=0; $i < 2; $i++)
+	{ 
+		$drag->run();
+		$drag->fly();
+	}
+	$drag->displayHealth();
  ?>
