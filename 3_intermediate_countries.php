@@ -1,5 +1,5 @@
 <?php 
-	// require_once();
+	require_once('connection.php');
 ?>
 
 <html>
@@ -10,37 +10,28 @@
 
 	<?php
 
-		$temp = array('a', 'b', 'c', 'd', 'e');
-
-		var_dump($temp);
-
-		$query = "";
-		$results = "";
-
-		country_selector();
-
-
 		/**
 		* COUNTRY
 		*/
-		class Country
-		{
+		// class Country
+		// {
 			
-			function __construct($argument)
-			{
-				# code...
-			}
-		}
+		// 	function __construct($argument)
+		// 	{
+		// 		# code...
+		// 	}
+		// }
 
+		country_selector();
+
+		
 		function country_selector()
 		{
 			?>
 				<form action="process.php" method="post">
 					<input type="hidden" name="action" value="country">
-					<select name="" id="">
-						<option value="HELLO">Hello</option>
-						<option value="TESTING">TESTING</option>
-						<?php //call create_options method here ?>
+					<select name="picked" id="">
+						<?php create_options(); ?>						
 					</select>
 					<input type="submit" value="Check Info">
 				</form>
@@ -48,12 +39,13 @@
 			<?php
 		}
 
-		var_dump($temp);
 		function create_options()
 		{
-			foreach ($temp as $value)
+			$query = "SELECT Name FROM country";
+			$countries = fetch_all($query);
+			foreach ($countries as $country)
 			{
-				echo "<option value='"."random"."'>"."random"."</option>";
+				echo "<option value='".$country['Name']."'>".$country['Name']."</option>";
 			}
 		}
 	 ?>
