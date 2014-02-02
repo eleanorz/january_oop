@@ -1,5 +1,6 @@
 <?php 
 	require_once('connection.php');
+	session_start();
 ?>
 
 <html>
@@ -23,6 +24,13 @@
 		// }
 
 		country_selector();
+
+		if (isset($_SESSION['result']))
+		{
+			pretty_info();
+		}
+
+		unset($_SESSION['result']);
 
 		
 		function country_selector()
@@ -48,6 +56,12 @@
 				echo "<option value='".$country['Name']."'>".$country['Name']."</option>";
 			}
 		}
+
+		function pretty_info()
+		{
+			var_dump($_SESSION['result']);
+		}
+
 	 ?>
 </body>
 </html>

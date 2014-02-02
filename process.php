@@ -1,6 +1,7 @@
 <?php 
 
 	require_once('connection.php');
+	session_start();
 
 	if (isset($_POST['action']) && $_POST['action']=='country')
 	{
@@ -9,7 +10,19 @@
 
 	function getInfo()
 	{
-		echo "I will get your info";
+		$c = $_POST['picked'];
+		echo "you requested country name = ".$c;
+
+		$query = "SELECT * from country WHERE Name = '".$c."'";
+
+		$result = fetch_record($query);
+
+		$_SESSION['result']=$result;
+
+		var_dump($_SESSION['result']);
+
+
+		header("Location:3_intermediate_countries.php");
 		die();
 	}
  ?>
