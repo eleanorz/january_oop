@@ -10,7 +10,6 @@
 <body>
 
 	<?php
-
 		/**
 		* COUNTRY
 		*/
@@ -59,9 +58,15 @@
 
 		function pretty_info()
 		{
-			var_dump($_SESSION['result']);
+			echo "<h1>Country Information</h1>";
+			echo "<p>";
+			foreach ($_SESSION['result'] as $key => $value)
+			{
+				echo "<br> <h3>".$key.": ".$value."</h3>";
+			}
+			echo "</p>";
 		}
 
-	 ?>
+	?>
 </body>
 </html>
