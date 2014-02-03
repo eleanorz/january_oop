@@ -42,9 +42,41 @@
 
 		}
 
-		public function cycle()
+		public function drive()
 		{
 			$this->miles+=15;
+			return $this->miles." total miles";
+		}
+
+		// public function reverse()
+		// {
+		// 	private var $temp = $this->miles-5;
+
+		// 	if ($temp < 0)
+		// 	{
+		// 		$this->miles = 0;
+		// 	}
+		// 	else
+		// 	{
+		// 		$this->miles = $temp;
+		// 	}
+
+		// 	return $this->miles." total miles";
+		// }
+
+		public function reverse()
+		{
+			$temp = $this->miles-5;
+
+			if ($temp < 0)
+			{
+				$this->miles = 0;
+			}
+			else
+			{
+				$this->miles = $temp;
+			}
+
 			return $this->miles." total miles";
 		}
 
@@ -66,6 +98,20 @@
 	var_dump($obj1);
 	var_dump($obj2);
 	var_dump($obj3);
+
+	echo $obj1->reverse();
+	$obj1->reverse();
+	$obj1->reverse();
+	$obj1->reverse();
+	$obj1->reverse();
+	$obj1->reverse();
+	$obj1->reverse();
+	echo $obj1->reverse();
+
+echo "<br>";
+	$temp = -100;
+	echo $temp;
+	echo abs($temp);
  ?>
 </body>
 </html>

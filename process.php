@@ -3,6 +3,18 @@
 	require_once('connection.php');
 	session_start();
 
+			/**
+		* COUNTRY
+		*/
+		// class Country
+		// {
+			
+		// 	function __construct($argument)
+		// 	{
+		// 		# code...
+		// 	}
+		// }
+
 	if (isset($_POST['action']) && $_POST['action']=='country')
 	{
 		getInfo();

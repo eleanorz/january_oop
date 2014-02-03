@@ -10,17 +10,7 @@
 <body>
 
 	<?php
-		/**
-		* COUNTRY
-		*/
-		// class Country
-		// {
-			
-		// 	function __construct($argument)
-		// 	{
-		// 		# code...
-		// 	}
-		// }
+
 
 		country_selector();
 
