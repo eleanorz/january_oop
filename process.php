@@ -3,38 +3,41 @@
 	require_once('connection.php');
 	session_start();
 
-			/**
-		* COUNTRY
-		*/
-		// class Country
-		// {
-			
-		// 	function __construct($argument)
-		// 	{
-		// 		# code...
-		// 	}
-		// }
+	/**
+	* COUNTRY
+	*/
 
 	if (isset($_POST['action']) && $_POST['action']=='country')
 	{
-		getInfo();
+		$x = new Country($_POST['picked']);
+		$x->getInfo();
 	}
 
-	function getInfo()
+	class Country
 	{
-		$c = $_POST['picked'];
-		echo "you requested country name = ".$c;
+		var $c = ""; 
+		
+		function __construct($string)
+		{
+			$this->c = $string;
+			echo "I am country: ".$this->c;
+		}
 
-		$query = "SELECT * from country WHERE Name = '".$c."'";
+		function getInfo()
+		{
+			echo "you requested country name = ".$this->c;
 
-		$result = fetch_record($query);
+			$query = "SELECT * from country WHERE Name = '".$this->c."'";
 
-		$_SESSION['result']=$result;
+			$result = fetch_record($query);
 
-		var_dump($_SESSION['result']);
+			$_SESSION['result']=$result;
 
+			var_dump($_SESSION['result']);
 
-		header("Location:3_intermediate_countries.php");
-		die();
+			header("Location:3_intermediate_countries.php");
+			die();
+		}
 	}
+
  ?>

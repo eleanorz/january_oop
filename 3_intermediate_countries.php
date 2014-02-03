@@ -5,12 +5,12 @@
 
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>country wiki</title>
 </head>
 <body>
 
 	<?php
-
 
 		country_selector();
 
