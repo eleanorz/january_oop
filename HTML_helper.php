@@ -1,5 +1,5 @@
 <?php 
- $temp = array("first_name" => "Michael", "last_name" => "Choi", "nick_name" => "Sensei");
+ $temp = array("first_name" => "Eleanor", "last_name" => "Zimmermann", "nick_name" => "Zimmy");
 	
 class HTML_Helper
 {
