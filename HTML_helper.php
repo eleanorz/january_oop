@@ -24,18 +24,10 @@ class HTML_Helper
 		}
 		echo "</tr></table>";
 	}
-
-	function print_select($temp, $string)
-	{
-		echo "entered print select".$string;
-		var_dump($temp);
-	}
 }
 
 $table = new HTML_Helper($temp);
 
 $table->print_table();
-
-$table->print_select($temp, "Hello world");
 
  ?>
